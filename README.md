@@ -1,2 +1,1 @@
-# proyecto-QR
-# proyecto-QR
+# Proyecto-QR
