@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Control de Acceso con QR</title>
+</head>
+<body>
+    <h1>Generar Código QR</h1>
+    <form action="/generate" method="post">
+        <input type="text" name="name" placeholder="Nombre" required>
+        <input type="text" name="user_id" placeholder="ID de usuario" required>
+        <button type="submit">Generar</button>
+    </form>
+
+    <h1>Validar Código QR</h1>
+    <form action="/validate" method="post">
+        <input type="text" name="scanned_code" placeholder="Código escaneado" required>
+        <button type="submit">Validar</button>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>
